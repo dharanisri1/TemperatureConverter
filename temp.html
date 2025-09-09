@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span class="history-link" onclick="toggleHistory()">Show History</span>
+    <div id="clock"></div>
+  </div>
+
+  <div class="main-container">
+    <!-- Left Panel -->
+    <div class="left-panel" id="left-panel">
+      <h1 onclick="toggleInfo()">Temperature Converter</h1>
+      <p id="info-text" style="display: none;">Enter a value in Celsius, Fahrenheit, or Kelvin to instantly convert between them.</p>
+
+      <div class="icons">
+        <span class="icon" onclick="changeTheme('sunny')">☀️</span>
+        <span class="icon" onclick="changeTheme('cloudy')">☁️</span>
+        <span class="icon" onclick="changeTheme('night')">🌙</span>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <div class="converter-box">
+        <label for="celsius" title="Enter temperature in Celsius">Celsius (°C)</label>
+        <input type="text" id="celsius" placeholder="Enter Celsius">
+
+        <label for="fahrenheit" title="Enter temperature in Fahrenheit">Fahrenheit (°F)</label>
+        <input type="text" id="fahrenheit" placeholder="Enter Fahrenheit">
+
+        <label for="kelvin" title="Enter temperature in Kelvin">Kelvin (K)</label>
+        <input type="text" id="kelvin" placeholder="Enter Kelvin">
+
+        <label for="city">Select City</label>
+        <select id="city">
+          <option value="Chennai">Chennai</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Ahmedabad">Ahmedabad</option>
+          <option value="Pune">Pune</option>
+          <option value="Jaipur">Jaipur</option>
+          <option value="Lucknow">Lucknow</option>
+        </select>
+
+        <button onclick="calculateTemperature()">Calculate</button>
+        <div id="result" class="result"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- History Modal -->
+  <div id="history-modal" class="history-modal">
+    <div class="history-content">
+      <span class="close-btn" onclick="toggleHistory()">&times;</span>
+      <h3>Conversion History</h3>
+      <div id="history-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
